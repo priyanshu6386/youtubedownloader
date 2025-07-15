@@ -4,6 +4,11 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
+
+app.get('/',(req,res)=>{
+  res.send('Welcome to YouTube Downloader API');
+})
+
 app.get('/api/download/:videoId', async (req, res) => {
   const videoUrl = `https://www.youtube.com/watch?v=${req.params.videoId}`;
   try {
